@@ -11,6 +11,8 @@ function Calcular() {
     let n1 = parseInt(document.getElementById(`num1`).value)
     let n2 = parseInt(document.getElementById(`num2`).value)
     let operacao = document.getElementById(`operacao`).value
+
+    // Criar variavel resultdo para realizar a operação escolhida
     let resultado;
 
     // Validação para o usuarios não digitar palavras apenas números 
@@ -27,23 +29,54 @@ function Calcular() {
     switch (operacao) {
         case 'Somar':
             resultado = n1 + n2;
-            alert(`O resultado da soma é: ${resultado}`)
+
+
+            // Altera os numeros do resultado e também altera o texto, igual ao show de botões. *********************** iTEM IMPORTANTE - ATENÇÃO ***************************
+            // Mostra o resultado innerHTML
+            document.getElementById('resultado').innerHTML = resultado
+
 
             break;
         case 'Subtrair':
             resultado = n1 - n2;
-            alert(`O resultado da subtração é: ${resultado}`)
+
+
+            // Altera os numeros do resultado e também altera o texto, igual ao show de botões. *********************** iTEM IMPORTANTE - ATENÇÃO ***************************
+            // Mostra o resultado innerHTML
+            document.getElementById('resultado').innerHTML = resultado
 
             break;
         case 'Multiplicar':
             resultado = n1 * n2;
-            alert(`O resultado da multiplicação é: ${resultado}`)
+
+
+            // Altera os numeros do resultado e também altera o texto, igual ao show de botões. *********************** iTEM IMPORTANTE - ATENÇÃO ***************************
+            // Mostra o resultado innerHTML
+            document.getElementById('resultado').innerHTML = resultado
 
             break;
         case 'Dividir':
-            resultado = n1 / n2;
-            alert(`O resultado da divisão é: ${resultado}`)
 
+
+            // Criar condição se for calcular numeros dividido por zero
+            if (n1 == 0 || n2 == 0) {
+
+                // criar uma variavel para uma mensagem de que Não é possivel dividir por 0
+                const resp = 'Não é possivel dividir por 0. '
+                document.getElementById('resultado').innerHTML = resp
+
+
+            }
+            else {
+                resultado = n1 / n2;
+
+                // Altera os numeros do resultado e também altera o texto, igual ao show de botões. *********************** iTEM IMPORTANTE - ATENÇÃO ***************************
+                // Mostra o resultado innerHTML
+                document.getElementById('resultado').innerHTML = resultado
+
+
+
+            }
             break;
 
         default:
@@ -51,5 +84,10 @@ function Calcular() {
             break;
     }
 
-
 }
+
+
+
+
+
+
